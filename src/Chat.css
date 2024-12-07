@@ -1,0 +1,342 @@
+.chat-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100vh;
+  background-color: white;
+  border-left: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.chat-container.closed {
+  transform: translateX(100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.chat-container.open {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.chat-header {
+  padding: 16px;
+  background-color: #2196f3;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.chat-language-selector {
+  padding: 8px 16px;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #f8f9fa;
+}
+
+.chat-language-selector select {
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.welcome-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.welcome-message {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.main-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.main-option-button {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.main-option-button:hover {
+  background-color: #f8f9fa;
+  border-color: #2196f3;
+  transform: translateY(-2px);
+}
+
+.option-content {
+  text-align: left;
+}
+
+.option-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.option-description {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 4px;
+}
+
+.booking-options,
+.travel-options {
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.option-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.option-button:hover {
+  background-color: #e3f2fd;
+  border-color: #2196f3;
+}
+
+.chat-box {
+  flex-grow: 1;
+  padding: 16px;
+  overflow-y: auto;
+  background-color: #fff;
+}
+
+.chat-message {
+  max-width: 85%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 12px;
+}
+
+.chat-message.user {
+  background-color: #e3f2fd;
+  margin-left: auto;
+  color: #333;
+}
+
+.chat-message.bot {
+  background-color: #f5f5f5;
+  margin-right: auto;
+  color: #333;
+}
+
+.chat-message.bot.loading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #666;
+}
+
+.chat-input {
+  padding: 16px;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  gap: 8px;
+  background-color: white;
+}
+
+.chat-input input {
+  flex-grow: 1;
+  padding: 12px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 24px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.chat-input input:focus {
+  border-color: #2196f3;
+}
+
+.chat-input button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: #2196f3;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.chat-input button:hover:not(:disabled) {
+  background-color: #1976d2;
+}
+
+.chat-input button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.current-pnr-status {
+  padding: 8px 16px;
+  background-color: #e3f2fd;
+  color: #1976d2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.clear-pnr-btn {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clear-pnr-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #d32f2f;
+}
+
+.flight-results {
+  background-color: white;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 8px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.flight-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+}
+
+.flight-table th,
+.flight-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.flight-table th {
+  font-weight: 500;
+  color: #666;
+  background-color: #f8f9fa;
+}
+
+.flight-table .price {
+  font-weight: bold;
+  color: #2196f3;
+}
+
+.pnr-details {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 8px;
+  margin: 8px 0;
+}
+
+.pnr-details.baggage {
+  background-color: #e8f5e9;
+}
+
+.pnr-details.delays {
+  background-color: #ffebee;
+}
+
+.pnr-details.class {
+  background-color: #e3f2fd;
+}
+.option-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.option-button:hover {
+  background-color: #e3f2fd;
+  border-color: #2196f3;
+  transform: translateY(-1px);
+}
+
+.option-button:active {
+  transform: translateY(0);
+}
+
+.booking-options {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 8px 0;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.options-title {
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 8px;
+}
