@@ -2037,7 +2037,7 @@ const Chat = () => {
     const [messages, setMessages] = useState([]);
     const [input, setInput] = useState('');
     const [language, setLanguage] = useState('en');
-    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen] = useState(true);
     const [isLoading, setIsLoading] = useState(false);
     const [currentPNR, setCurrentPNR] = useState(null);
     const [currentFlow, setCurrentFlow] = useState('initial');

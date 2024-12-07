@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MessageCircle, Calendar, Users, MapPin, Search, Menu, Plane } from 'lucide-react';
+import { MessageCircle, Calendar, Users, MapPin, Search, Plane } from 'lucide-react';
 import Chat from './Chat';
 import './App.css';
 
